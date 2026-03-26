@@ -1,6 +1,5 @@
 # Lab 12/13 Bernardo Martinez
 from flask import Flask, render_template
-import random
 
 # Lab 12 - Your Name
 # Flask needs to know the name of this file to find templates and static files
@@ -51,6 +50,7 @@ def analyze(word):
                            word=word,
                            num_chars=num_chars,
                            num_vowels=num_vowels)
+
 
 
 
