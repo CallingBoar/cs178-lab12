@@ -1,5 +1,6 @@
 # Lab 12/13 Bernardo Martinez
 from flask import Flask, render_template
+import random
 
 # Lab 12 - Your Name
 # Flask needs to know the name of this file to find templates and static files
@@ -37,11 +38,19 @@ def analyze(word):
     # YOUR CODE HERE
     # Count the characters in `word` and return as a string
     # Example: /analyze/Drake  →  should display: 5
-    count = 0
+    num_chars = 0
     for i in word:
-        count += 1
+        num_chars += 1
 
-    return "Number of characters in your word: " + str(count)
+    num_vowels = 0
+    for letter in word:
+        if letter in ["a","e","i","o","u","A","E","I","O","U"] or (letter in ["y","Y"] and random.random() > 0.5):
+            num_vowels += 1
+
+    return render_template('analyze.html',
+                           word=word,
+                           num_chars=num_chars,
+                           num_vowels=num_vowels)
 
 
 
