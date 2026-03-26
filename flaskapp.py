@@ -43,7 +43,7 @@ def analyze(word):
 
     num_vowels = 0
     for letter in word:
-        if letter in ["a","e","i","o","u","A","E","I","O","U"] or (letter in ["y","Y"] and random.random() > 0.5):
+        if letter in ["a","e","i","o","u"]:
             num_vowels += 1
 
     return render_template('analyze.html',
