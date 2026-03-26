@@ -37,6 +37,7 @@ def analyze(word):
     # YOUR CODE HERE
     # Count the characters in `word` and return as a string
     # Example: /analyze/Drake  →  should display: 5
+    count = 0
     for i in word:
         count += 1
 
