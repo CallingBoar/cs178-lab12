@@ -46,12 +46,15 @@ def analyze(word):
         if letter in ["a","e","i","o","u"]:
             num_vowels += 1
 
+    reversed_word = ""
+    for letter_index in range(len(word)):
+        reversed_word += word[len(word) - letter_index - 1]
+
     return render_template('analyze.html',
                            word=word,
                            num_chars=num_chars,
-                           num_vowels=num_vowels)
-
-
+                           num_vowels=num_vowels,
+                           reversed_word=reversed_word)
 
 
 # ============================================================
